@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308215846) do
+ActiveRecord::Schema.define(:version => 20120608230532) do
+
+  create_table "fixtures", :force => true do |t|
+    t.date     "matchdate"
+    t.string   "home_team"
+    t.string   "away_team"
+    t.integer  "home_score"
+    t.integer  "away_score"
+    t.string   "winner"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -32,6 +43,20 @@ ActiveRecord::Schema.define(:version => 20120308215846) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
+  create_table "scorelines", :force => true do |t|
+    t.integer  "home_score"
+    t.integer  "away_score"
+    t.string   "winner"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
