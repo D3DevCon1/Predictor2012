@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608230532) do
+ActiveRecord::Schema.define(:version => 20120608233750) do
 
   create_table "fixtures", :force => true do |t|
     t.date     "matchdate"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(:version => 20120608230532) do
     t.integer  "home_score"
     t.integer  "away_score"
     t.string   "winner"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "selections", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "match1"
+    t.integer  "match2"
+    t.integer  "match3"
+    t.integer  "match4"
+    t.integer  "match5"
+    t.integer  "match6"
+    t.integer  "match7"
+    t.integer  "match8"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,0 +1,29 @@
+<%= form_for(@scoreline) do |f| %>
+  <% if @scoreline.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scoreline.errors.count, "error") %> prohibited this scoreline from being saved:</h2>
+
+      <ul>
+      <% @scoreline.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :home_score %><br />
+    <%= f.number_field :home_score %>
+  </div>
+  <div class="field">
+    <%= f.label :away_score %><br />
+    <%= f.number_field :away_score %>
+  </div>
+  <div class="field">
+    <%= f.label :winner %><br />
+    <%= f.text_field :winner %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

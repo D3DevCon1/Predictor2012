@@ -1,4 +1,4 @@
-SampleApp::Application.routes.draw do    
+SampleApp::Application.routes.draw do   
   resources :users do
     member do
       get :following, :followers
@@ -8,6 +8,7 @@ SampleApp::Application.routes.draw do
   resources :teams
   resources :fixtures
   resources :scorelines
+  resources :selections
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

@@ -1,0 +1,2 @@
+module ScorelinesHelper
+end

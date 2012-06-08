@@ -1,0 +1,27 @@
+<h1>Listing scorelines</h1>
+
+<table>
+  <tr>
+    <th>Home score</th>
+    <th>Away score</th>
+    <th>Winner</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scorelines.each do |scoreline| %>
+  <tr>
+    <td><%= scoreline.home_score %></td>
+    <td><%= scoreline.away_score %></td>
+    <td><%= scoreline.winner %></td>
+    <td><%= link_to 'Show', scoreline %></td>
+    <td><%= link_to 'Edit', edit_scoreline_path(scoreline) %></td>
+    <td><%= link_to 'Destroy', scoreline, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scoreline', new_scoreline_path %>
