@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608233750) do
+ActiveRecord::Schema.define(:version => 20120608230532) do
 
   create_table "fixtures", :force => true do |t|
     t.date     "matchdate"
@@ -24,44 +24,10 @@ ActiveRecord::Schema.define(:version => 20120608233750) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "microposts", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
-
-  create_table "relationships", :force => true do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
-  add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
-  add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
-
   create_table "scorelines", :force => true do |t|
     t.integer  "home_score"
     t.integer  "away_score"
     t.string   "winner"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "selections", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "match1"
-    t.integer  "match2"
-    t.integer  "match3"
-    t.integer  "match4"
-    t.integer  "match5"
-    t.integer  "match6"
-    t.integer  "match7"
-    t.integer  "match8"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
