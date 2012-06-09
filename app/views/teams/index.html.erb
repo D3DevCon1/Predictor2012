@@ -1,23 +1,12 @@
-<h1>Listing teams</h1>
+<%= provide(:title, 'Team List') %>
+<h1>Team List</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate %>
 
-<% @teams.each do |team| %>
-  <tr>
-    <td><%= team.name %></td>
-    <td><%= link_to 'Show', team %></td>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="teams">
+  <%= render @teams %>
+</ul>
 
-<br />
+<%= will_paginate %>
 
 <%= link_to 'New Team', new_team_path %>

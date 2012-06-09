@@ -1,33 +1,12 @@
-<h1>Listing fixtures</h1>
+<%= provide(:title, 'Fixture List') %>
+<h1>Fixture List</h1>
 
-<table>
-  <tr>
-    <th>Matchdate</th>
-    <th>Home team</th>
-    <th>Away team</th>
-    <th>Home score</th>
-    <th>Away score</th>
-    <th>Winner</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate %>
 
-<% @fixtures.each do |fixture| %>
-  <tr>
-    <td><%= fixture.matchdate %></td>
-    <td><%= fixture.home_team %></td>
-    <td><%= fixture.away_team %></td>
-    <td><%= fixture.home_score %></td>
-    <td><%= fixture.away_score %></td>
-    <td><%= fixture.winner %></td>
-    <td><%= link_to 'Show', fixture %></td>
-    <td><%= link_to 'Edit', edit_fixture_path(fixture) %></td>
-    <td><%= link_to 'Destroy', fixture, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="fixtures">
+  <%= render @fixtures %>
+</ul>
 
-<br />
+<%= will_paginate %>
 
 <%= link_to 'New Fixture', new_fixture_path %>

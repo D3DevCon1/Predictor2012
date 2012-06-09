@@ -1,5 +1,10 @@
+<% if current_user.admin? %>
+<%= provide(:title, 'Create User') %>
+<h1>Create User</h1>
+<% else %>
 <%= provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
+<% end %>
 
 <div class="row">
   <div class="span6 offset3">
@@ -16,8 +21,11 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <% if current_user.admin? %>
+        <%= f.submit "Create User", class: "btn btn-large btn-primary" %>
+	  <% else %>
+	    <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+	  <% end %>
     <% end %>
   </div>
 </div>
