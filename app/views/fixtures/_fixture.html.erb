@@ -1,0 +1,10 @@
+<li>
+  <%= fixture.matchdate %>
+  <%= fixture.home_team %>
+  Vs 
+  <%= fixture.away_team %>
+  <% if current_user.admin? %>
+    | <%= link_to 'Edit', edit_fixture_path(fixture) %>
+	| <%= link_to "delete", fixture, method: :delete, confirm: "You sure?" %>
+  <% end %>
+</li>

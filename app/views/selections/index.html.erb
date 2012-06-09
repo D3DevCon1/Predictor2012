@@ -1,0 +1,39 @@
+<h1>Listing selections</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Match1</th>
+    <th>Match2</th>
+    <th>Match3</th>
+    <th>Match4</th>
+    <th>Match5</th>
+    <th>Match6</th>
+    <th>Match7</th>
+    <th>Match8</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @selections.each do |selection| %>
+  <tr>
+    <td><%= selection.user_id %></td>
+    <td><%= selection.match1 %></td>
+    <td><%= selection.match2 %></td>
+    <td><%= selection.match3 %></td>
+    <td><%= selection.match4 %></td>
+    <td><%= selection.match5 %></td>
+    <td><%= selection.match6 %></td>
+    <td><%= selection.match7 %></td>
+    <td><%= selection.match8 %></td>
+    <td><%= link_to 'Show', selection %></td>
+    <td><%= link_to 'Edit', edit_selection_path(selection) %></td>
+    <td><%= link_to 'Destroy', selection, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Selection', new_selection_path %>

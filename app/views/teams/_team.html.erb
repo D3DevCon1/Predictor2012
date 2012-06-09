@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for current_user, size: 32 %>
+  <%= link_to team.name, team %>
+  <% if current_user.admin? %>
+    | <%= link_to 'Edit', edit_team_path(team) %>
+	| <%= link_to "delete", team, method: :delete, confirm: "You sure?" %>
+  <% end %>
+</li>

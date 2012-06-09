@@ -1,0 +1,53 @@
+<%= form_for(@selection) do |f| %>
+  <% if @selection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selection.errors.count, "error") %> prohibited this selection from being saved:</h2>
+
+      <ul>
+      <% @selection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :match1 %><br />
+    <%= f.number_field :match1 %>
+  </div>
+  <div class="field">
+    <%= f.label :match2 %><br />
+    <%= f.number_field :match2 %>
+  </div>
+  <div class="field">
+    <%= f.label :match3 %><br />
+    <%= f.number_field :match3 %>
+  </div>
+  <div class="field">
+    <%= f.label :match4 %><br />
+    <%= f.number_field :match4 %>
+  </div>
+  <div class="field">
+    <%= f.label :match5 %><br />
+    <%= f.number_field :match5 %>
+  </div>
+  <div class="field">
+    <%= f.label :match6 %><br />
+    <%= f.number_field :match6 %>
+  </div>
+  <div class="field">
+    <%= f.label :match7 %><br />
+    <%= f.number_field :match7 %>
+  </div>
+  <div class="field">
+    <%= f.label :match8 %><br />
+    <%= f.number_field :match8 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
