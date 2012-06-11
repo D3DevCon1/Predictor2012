@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
 gem 'jquery-rails', '2.0.0'
-gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-sass', '2.0.3'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
-gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+gem 'kaminari'
+#gem 'will_paginate', '3.0.3'
+#gem 'bootstrap-will_paginate', '0.0.6'
 gem 'ffi', '1.0.9'
+gem 'rails_admin'
+gem "devise"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -38,3 +41,4 @@ end
 group :production do
   gem 'pg', '0.12.2'
 end
+
